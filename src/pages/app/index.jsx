@@ -6,7 +6,6 @@ import Chekcout from '../checkout'
 import MyTikets from '../my-tikets'
 import SignIn from '../sign-in'
 import NotFound from '../not-found'
-
 import NavBar from '../../components/nav-bar'
 
 const AppRoutes = () => {
@@ -51,12 +50,12 @@ const App = () => {
         },
         {
             text: 'drama',
-            link: '/drama'
+            link: '/drama',
         },
         {
             text: 'mistery',
-            link: '/mistery'
-        }
+            link: '/mistery',
+        },
     ]
     const rightNavItems = [
         {

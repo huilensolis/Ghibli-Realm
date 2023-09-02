@@ -1,7 +1,7 @@
 import NavItem from '../nav-link'
 const NavBar = ({ leftNavLinks, rightNavLinks }) => {
     return (
-        <nav className="w-full flex justify-between items-center py-7 px-7">
+        <nav className="w-full flex justify-between items-center py-7 px-7 fixed top-0">
             <ul className="flex list-none gap-5">
                 {leftNavLinks.map((item) => (
                     <li key={item.link}>
