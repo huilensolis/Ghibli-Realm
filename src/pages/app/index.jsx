@@ -7,6 +7,7 @@ import MyTikets from '../my-tikets'
 import SignIn from '../sign-in'
 import NotFound from '../not-found'
 import NavBar from '../../components/nav-bar'
+import Details from '../details'
 
 const AppRoutes = () => {
     const routes = useRoutes([
@@ -27,6 +28,10 @@ const AppRoutes = () => {
             element: <MyTikets />,
         },
         {
+            path: '/details/:id',
+            element: <Details />,
+        },
+        {
             path: '/sign-in',
             element: <SignIn />,
         },
@@ -39,41 +44,10 @@ const AppRoutes = () => {
 }
 
 const App = () => {
-    const leftNavItems = [
-        {
-            text: 'home',
-            link: '/',
-        },
-        {
-            text: 'fantasy',
-            link: '/fantasy',
-        },
-        {
-            text: 'drama',
-            link: '/drama',
-        },
-        {
-            text: 'mistery',
-            link: '/mistery',
-        },
-    ]
-    const rightNavItems = [
-        {
-            text: 'my tikets',
-            link: '/my-tikets',
-        },
-        {
-            text: 'my account',
-            link: '/account',
-        },
-        {
-            text: 'sign In',
-            link: '/sign-in',
-        },
-    ]
+    
     return (
         <BrowserRouter>
-            <NavBar leftNavLinks={leftNavItems} rightNavLinks={rightNavItems} />
+            <NavBar />
             <AppRoutes />
         </BrowserRouter>
     )
