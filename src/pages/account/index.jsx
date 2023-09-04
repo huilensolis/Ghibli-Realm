@@ -1,5 +1,5 @@
 const App = () => {
-    return <>accaunt</>
+    return <>account</>
 }
 
 export default App
