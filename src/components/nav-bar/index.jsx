@@ -37,15 +37,15 @@ const NavBar = () => {
         <nav className="w-full flex justify-between items-center py-7 px-10vw fixed top-0 z-10 bg-cm-white">
             <ul className="flex list-none gap-5 min-w-max">
                 {leftNavLinks.map((item) => (
-                    <li key={item.link}>
-                        {item.logo && (
-                            <NavLink to={item.link} className="font-bold">
-                                {item.text}
-                            </NavLink>
-                        )}
-                        {!item.logo && (
-                            <NavItem link={item.link}>{item.text}</NavItem>
-                        )}
+                    <li
+                        key={item.link}
+                        onClick={() =>
+                            showMobileMenu ? setShowMobileMenu(false) : ''
+                        }
+                    >
+                        <NavLink to={item.link} className="font-bold">
+                            {item.text}
+                        </NavLink>
                     </li>
                 ))}
             </ul>
