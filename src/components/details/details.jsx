@@ -1,6 +1,31 @@
-import PrimaryBtn from '../buttons/add-to-cart'
+import { useContext, useEffect, useState } from 'react'
+import PrimaryBtn from '../buttons/primary'
+import SecondaryBtn from '../buttons/secondary'
+import { CartContext } from '../../context/cart'
 
 const FilmDetails = ({ film }) => {
+    const { addToCart, deleteFromCart, isFilmAlreadyInCart } =
+        useContext(CartContext)
+
+    const [primaryDisabled, setPrimaryDisabled] = useState(false)
+    const [secundaryDisabled, setSecundaryDisabled] = useState(false)
+    useEffect(() => {
+        if (isFilmAlreadyInCart(film.id)) {
+            setSecundaryDisabled(false)
+            setPrimaryDisabled(true)
+            return
+        }
+        setSecundaryDisabled(true)
+        setPrimaryDisabled(false)
+    }, [
+        secundaryDisabled,
+        primaryDisabled,
+        setPrimaryDisabled,
+        setSecundaryDisabled,
+        film.id,
+        isFilmAlreadyInCart,
+    ])
+
     return (
         <main>
             <figure className="-z-10 absolute top-0 left-0 w-screen h-screen bg-no-repeat bg-center bg-cover opacity-60 blur-md bg-white" />
@@ -21,7 +46,24 @@ const FilmDetails = ({ film }) => {
                             className="w-full h-full object-cover overflow-hidden rounded-md object-center"
                         />
                         <p style={{ maxHeight: '600px' }}>{film.description}</p>
-                        <PrimaryBtn>Add to cart</PrimaryBtn>
+                        <section className="flex gap-3">
+                            {!primaryDisabled && (
+                                <PrimaryBtn
+                                    onClick={() => addToCart(film.id)}
+                                    disabled={primaryDisabled}
+                                >
+                                    Add to cart
+                                </PrimaryBtn>
+                            )}
+                            {!secundaryDisabled && (
+                                <SecondaryBtn
+                                    onClick={() => deleteFromCart(film.id)}
+                                    disabled={secundaryDisabled}
+                                >
+                                    Remove from cart
+                                </SecondaryBtn>
+                            )}
+                        </section>
                     </section>
                 </article>
             </header>

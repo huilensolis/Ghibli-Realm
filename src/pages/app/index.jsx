@@ -9,6 +9,8 @@ import NotFound from '../not-found'
 import NavBar from '../../components/nav-bar'
 import Details from '../details'
 
+import { CartContextProvider } from '../../context/cart'
+
 const AppRoutes = () => {
     const routes = useRoutes([
         {
@@ -44,12 +46,13 @@ const AppRoutes = () => {
 }
 
 const App = () => {
-    
     return (
-        <BrowserRouter>
-            <NavBar />
-            <AppRoutes />
-        </BrowserRouter>
+        <CartContextProvider>
+            <BrowserRouter>
+                <NavBar />
+                <AppRoutes />
+            </BrowserRouter>
+        </CartContextProvider>
     )
 }
 

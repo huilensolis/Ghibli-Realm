@@ -7,7 +7,7 @@ export default {
                 'cm-black': '#210124',
                 'cm-green': '#2A6041',
                 'cm-tomato': '#F06449',
-                'cm-white': '#D8D4F2',
+                'cm-white': '#a2d2ff',
             },
         },
     },

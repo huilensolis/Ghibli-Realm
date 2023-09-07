@@ -1,5 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import NavItem from '../nav-link'
+
+import CartCount from '../cart-count'
 const NavBar = () => {
     const leftNavLinks = [
         {
@@ -27,7 +29,11 @@ const NavBar = () => {
             <ul className="flex list-none gap-5">
                 {leftNavLinks.map((item) => (
                     <li key={item.link}>
-                        {item.logo && <NavLink to={item.link} className='font-bold'>{item.text}</NavLink>}
+                        {item.logo && (
+                            <NavLink to={item.link} className="font-bold">
+                                {item.text}
+                            </NavLink>
+                        )}
                         {!item.logo && (
                             <NavItem link={item.link}>{item.text}</NavItem>
                         )}
@@ -41,6 +47,9 @@ const NavBar = () => {
                             <NavItem link={item.link}>{item.text}</NavItem>
                         </li>
                     ))}
+                    <li>
+                        📦 <CartCount />
+                    </li>
                 </ul>
             </ul>
         </nav>
