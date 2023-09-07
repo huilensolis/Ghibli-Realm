@@ -9,6 +9,9 @@ export default {
                 'cm-tomato': '#F06449',
                 'cm-white': '#a2d2ff',
             },
+            padding: {
+                '10vw': '10vw',
+            },
         },
     },
     plugins: [],
