@@ -23,10 +23,6 @@ const NavBar = () => {
             link: '/my-tikets',
         },
         {
-            text: 'my account',
-            link: '/account',
-        },
-        {
             text: 'sign In',
             link: '/sign-in',
         },

@@ -16,7 +16,6 @@ const Details = () => {
             const response = await fetch(`${apiUrl}/films/${filmId}`)
             const data = await response.json()
             setFilm(data)
-            console.log(data)
         }
         getFilm()
     }, [filmId])

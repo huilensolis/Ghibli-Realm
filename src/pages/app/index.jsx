@@ -1,7 +1,6 @@
 import { BrowserRouter, useRoutes } from 'react-router-dom'
 
 import Home from '../home'
-import Account from '../account'
 import Chekcout from '../checkout'
 import MyTikets from '../my-tikets'
 import SignIn from '../sign-in'
@@ -16,10 +15,6 @@ const AppRoutes = () => {
         {
             path: '/',
             element: <Home />,
-        },
-        {
-            path: '/account',
-            element: <Account />,
         },
         {
             path: '/checkout',

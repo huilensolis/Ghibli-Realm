@@ -42,7 +42,7 @@ const FilmDetails = ({ film }) => {
                     <img
                         src={film.movie_banner}
                         alt={film.title}
-                        className="w-full h-full object-cover overflow-hidden rounded-md object-center"
+                        className="w-full h-full object-cover overflow-hidden rounded-md object-center max-h-[300px]"
                     />
                     <p style={{ maxHeight: '600px' }}>{film.description}</p>
                     <section className="flex gap-3">
@@ -60,7 +60,7 @@ const FilmDetails = ({ film }) => {
                                 onClick={() => deleteFromCart(film.id)}
                                 disabled={secundaryDisabled}
                             >
-                                Remove from cart{' '}
+                                Remove from cart
                                 <MinusCircleIcon className="h-5 w-5" />
                             </SecondaryBtn>
                         )}
