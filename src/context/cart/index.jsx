@@ -19,8 +19,6 @@ const CartContextProvider = ({ children }) => {
     }
     const deleteFromCart = (id) => {
         setCart(cart.filter((filmId) => filmId !== id))
-        console.log(id)
-        console.log(cart.filter((film) => film.id !== id))
     }
     const isFilmAlreadyInCart = (filmId) => {
         return cart.includes(filmId)

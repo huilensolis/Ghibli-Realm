@@ -22,10 +22,6 @@ const NavBar = () => {
             text: 'my tikets',
             link: '/my-tikets',
         },
-        {
-            text: 'sign In',
-            link: '/sign-in',
-        },
     ]
 
     const [showMobileMenu, setShowMobileMenu] = useState(false)
